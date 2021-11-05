@@ -21,7 +21,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
-        
+        sceneView.autoenablesDefaultLighting = true
        
     }
     
@@ -53,17 +53,31 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
         if let imageAnchor = anchor as? ARImageAnchor {
+            print(imageAnchor.referenceImage.name)
+            
             let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
             plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5) // half transparent
             let planeNode = SCNNode(geometry: plane)
             planeNode.eulerAngles.x = -.pi/2 //rotete the plane 90 diegree so that it lays flat
             node.addChildNode(planeNode)
-            /*
-            if let pokeScene = SCNScene(named: "art.scnassets/eevee.scn") {
-                if let pokeNode = pokeScene.rootNode.childNodes.first {
-                    planeNode.addChildNode(pokeNode)
+            
+            if imageAnchor.referenceImage.name!.contains("eevee-card") {
+                if let pokeScene = SCNScene(named: "art.scnassets/eevee.scn") {
+                    if let pokeNode = pokeScene.rootNode.childNodes.first {
+                        pokeNode.eulerAngles.x = .pi/2 //rotete the pokemon 90 diegree so that it stands on the card
+                        planeNode.addChildNode(pokeNode)
+                    }
                 }
-            }*/
+            }
+            
+            if imageAnchor.referenceImage.name!.contains("oddish-card") {
+                if let pokeScene = SCNScene(named: "art.scnassets/oddish.scn") {
+                    if let pokeNode = pokeScene.rootNode.childNodes.first {
+                        pokeNode.eulerAngles.x = .pi/2 //rotete the pokemon 90 diegree so that it stands on the card
+                        planeNode.addChildNode(pokeNode)
+                    }
+                }
+            }
             
         }
         
