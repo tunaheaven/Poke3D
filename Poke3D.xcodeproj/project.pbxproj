@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50AF6C32735F1E6005F1230 /* oddish-card1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A50AF6BF2735F1E6005F1230 /* oddish-card1.jpg */; };
+		A50AF6C42735F1E6005F1230 /* eevee-card1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A50AF6C02735F1E6005F1230 /* eevee-card1.jpg */; };
+		A50AF6C52735F1E6005F1230 /* eevee-card2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A50AF6C12735F1E6005F1230 /* eevee-card2.jpg */; };
+		A50AF6C62735F1E6005F1230 /* oddish-card2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A50AF6C22735F1E6005F1230 /* oddish-card2.jpg */; };
 		A570974F2735AEE5003AB635 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A570974E2735AEE5003AB635 /* AppDelegate.swift */; };
 		A57097512735AEE5003AB635 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = A57097502735AEE5003AB635 /* art.scnassets */; };
 		A57097532735AEE5003AB635 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57097522735AEE5003AB635 /* ViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A50AF6BF2735F1E6005F1230 /* oddish-card1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "oddish-card1.jpg"; sourceTree = "<group>"; };
+		A50AF6C02735F1E6005F1230 /* eevee-card1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "eevee-card1.jpg"; sourceTree = "<group>"; };
+		A50AF6C12735F1E6005F1230 /* eevee-card2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "eevee-card2.jpg"; sourceTree = "<group>"; };
+		A50AF6C22735F1E6005F1230 /* oddish-card2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "oddish-card2.jpg"; sourceTree = "<group>"; };
 		A570974B2735AEE5003AB635 /* Poke3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poke3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A570974E2735AEE5003AB635 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A57097502735AEE5003AB635 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -61,6 +69,10 @@
 				A57097542735AEE5003AB635 /* Main.storyboard */,
 				A57097572735AEE6003AB635 /* Assets.xcassets */,
 				A57097592735AEE6003AB635 /* LaunchScreen.storyboard */,
+				A50AF6C02735F1E6005F1230 /* eevee-card1.jpg */,
+				A50AF6C12735F1E6005F1230 /* eevee-card2.jpg */,
+				A50AF6BF2735F1E6005F1230 /* oddish-card1.jpg */,
+				A50AF6C22735F1E6005F1230 /* oddish-card2.jpg */,
 			);
 			path = Poke3D;
 			sourceTree = "<group>";
@@ -124,9 +136,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A57097512735AEE5003AB635 /* art.scnassets in Resources */,
+				A50AF6C32735F1E6005F1230 /* oddish-card1.jpg in Resources */,
 				A570975B2735AEE6003AB635 /* LaunchScreen.storyboard in Resources */,
+				A50AF6C62735F1E6005F1230 /* oddish-card2.jpg in Resources */,
 				A57097582735AEE6003AB635 /* Assets.xcassets in Resources */,
+				A50AF6C42735F1E6005F1230 /* eevee-card1.jpg in Resources */,
 				A57097562735AEE5003AB635 /* Main.storyboard in Resources */,
+				A50AF6C52735F1E6005F1230 /* eevee-card2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
