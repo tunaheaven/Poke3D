@@ -22,19 +22,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // Set the scene to the view
-        sceneView.scene = scene
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
-
+        let configuration = ARImageTrackingConfiguration()
+        
+        if let imageToTrack = ARReferenceImage.referenceImages(inGroupNamed: "PokemonCards", bundle: Bundle.main) {
+            configuration.trackingImages = imageToTrack
+            configuration.maximumNumberOfTrackedImages = 4
+            print("Imagest addes successfully.")
+        }
+        
+        
+        
         // Run the view's session
         sceneView.session.run(configuration)
     }
@@ -46,29 +50,24 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
 
-    // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
-     
+        if let imageAnchor = anchor as? ARImageAnchor {
+            let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+            plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5) // half transparent
+            let planeNode = SCNNode(geometry: plane)
+            planeNode.eulerAngles.x = -.pi/2 //rotete the plane 90 diegree so that it lays flat
+            node.addChildNode(planeNode)
+            /*
+            if let pokeScene = SCNScene(named: "art.scnassets/eevee.scn") {
+                if let pokeNode = pokeScene.rootNode.childNodes.first {
+                    planeNode.addChildNode(pokeNode)
+                }
+            }*/
+            
+        }
+        
+        
         return node
-    }
-*/
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-        
-    }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
     }
 }
